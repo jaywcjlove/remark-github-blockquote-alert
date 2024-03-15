@@ -29,15 +29,16 @@ jobs:
           openSource: https://github.com/jaywcjlove/remark-github-blockquote-alert
           tocs: false
           element: 
-            wrapper: style=max-width: 860px;
+            wrapper: style=max-width:860px;
           menus:
             Attr: https://jaywcjlove.github.io/rehype-attr/
-            Ignore: index.html
+            Ignore: https://wangchujiang.com/rehype-ignore/
             Rewrite: https://jaywcjlove.github.io/rehype-rewrite/
             Video: https://jaywcjlove.github.io/rehype-video/
             Sponsor: https://jaywcjlove.github.io/#/sponsor
           footer: |
             <a href="https://jaywcjlove.github.io/rehype-attr/" target="_blank">Attr</a> • 
+            <a href="https://jaywcjlove.github.io/rehype-rewrite/" target="_blank">Rewrite</a> • 
             <a href="https://wangchujiang.com/#/projects" target="_blank">Projects</a> • 
             <a href="https://wangchujiang.com/#/sponsor" target="_blank">Sponsor</a> • 
             <a href="https://wangchujiang.com/#/app" target="_blank">More Apps</a><br /><br />
