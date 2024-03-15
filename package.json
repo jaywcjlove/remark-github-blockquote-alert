@@ -1,6 +1,6 @@
 {
   "name": "remark-github-alert",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information.",
   "homepage": "https://jaywcjlove.github.io/remark-github-alert",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
