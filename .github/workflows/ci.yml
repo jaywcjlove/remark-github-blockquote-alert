@@ -25,8 +25,8 @@ jobs:
       - name: Create idoc config
         run: |
           cat > idoc.yml << EOF
-          site: "rehype-github-alert {{version}}"
-          openSource: https://github.com/jaywcjlove/remark-github-alert
+          site: "remark-github-blockquote-alert {{version}}"
+          openSource: https://github.com/jaywcjlove/remark-github-blockquote-alert
           menus:
             Attr: https://jaywcjlove.github.io/rehype-attr/
             Ignore: index.html
@@ -92,15 +92,15 @@ jobs:
           name: ${{ steps.create_tag.outputs.version }}
           tag: ${{ steps.create_tag.outputs.version }}
           body: |
-            [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor) [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/rehype-github-alert@${{steps.create_tag.outputs.versionNumber}}/file/README.md) 
+            [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor) [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/remark-github-blockquote-alert@${{steps.create_tag.outputs.versionNumber}}/file/README.md) 
 
-            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/rehype-github-alert/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/jaywcjlove/remark-github-blockquote-alert/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
 
             ${{ steps.changelog.outputs.changelog }}
 
       - run: npm publish --access public --provenance
-        name: 📦  rehype-github-alert publish to NPM
+        name: 📦  remark-github-blockquote-alert publish to NPM
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

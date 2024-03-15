@@ -1,8 +1,8 @@
 {
-  "name": "remark-github-alert",
+  "name": "remark-github-blockquote-alert",
   "version": "1.0.0",
   "description": "Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information.",
-  "homepage": "https://jaywcjlove.github.io/remark-github-alert",
+  "homepage": "https://jaywcjlove.github.io/remark-github-blockquote-alert",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
   "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaywcjlove/remark-github-alert"
+    "url": "https://github.com/jaywcjlove/remark-github-blockquote-alert"
   },
   "files": [
     "src",
@@ -30,6 +30,7 @@
   "keywords": [
     "remark",
     "remark-ignore",
+    "remark-github-blockquote-alert",
     "ignore",
     "element",
     "markdown",

@@ -1,13 +1,13 @@
-remark-github-alert
+remark-github-blockquote-alert
 ===
 <!--rehype:style=display: flex; height: 230px; align-items: center; justify-content: center; font-size: 38px;-->
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor) 
-[![Downloads](https://img.shields.io/npm/dm/remark-github-alert.svg?style=flat)](https://www.npmjs.com/package/remark-github-alert)
-[![NPM version](https://img.shields.io/npm/v/remark-github-alert.svg?style=flat)](https://npmjs.org/package/remark-github-alert)
-[![CI](https://github.com/jaywcjlove/remark-github-alert/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/remark-github-alert/actions/workflows/ci.yml)
-[![Coverage Status](https://jaywcjlove.github.io/remark-github-alert/badges.svg)](https://jaywcjlove.github.io/remark-github-alert/lcov-report/)
-[![Repo Dependents](https://badgen.net/github/dependents-repo/jaywcjlove/remark-github-alert)](https://github.com/jaywcjlove/remark-github-alert/network/dependents)
+[![Downloads](https://img.shields.io/npm/dm/remark-github-blockquote-alert.svg?style=flat)](https://www.npmjs.com/package/remark-github-blockquote-alert)
+[![NPM version](https://img.shields.io/npm/v/remark-github-blockquote-alert.svg?style=flat)](https://npmjs.org/package/remark-github-blockquote-alert)
+[![CI](https://github.com/jaywcjlove/remark-github-blockquote-alert/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/remark-github-blockquote-alert/actions/workflows/ci.yml)
+[![Coverage Status](https://jaywcjlove.github.io/remark-github-blockquote-alert/badges.svg)](https://jaywcjlove.github.io/remark-github-blockquote-alert/lcov-report/)
+[![Repo Dependents](https://badgen.net/github/dependents-repo/jaywcjlove/remark-github-blockquote-alert)](https://github.com/jaywcjlove/remark-github-blockquote-alert/network/dependents)
 
 Remark plugin to add support for [GitHub Alert](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
 
@@ -18,13 +18,13 @@ Alerts are a Markdown extension based on the blockquote syntax that you can use 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c): Node 12+ is needed to use it and it must be `import` instead of `require`.
 
 ```bash
-npm install remark-github-alert
+npm install remark-github-blockquote-alert
 ```
 
 ## Usage
 
 ```js
-import plugin from 'remark-github-alert'
+import plugin from 'remark-github-blockquote-alert'
 
 const html = String(
   await remark().use(remarkParse).use(plugin).use(remarkRehype).use(rehypeStringify).process(`\
@@ -79,8 +79,8 @@ Here are the rendered alerts:
 
 As always, thanks to our amazing contributors!
 
-<a href="https://github.com/jaywcjlove/remark-github-alert/graphs/contributors">
-  <img src="https://jaywcjlove.github.io/remark-github-alert/CONTRIBUTORS.svg" />
+<a href="https://github.com/jaywcjlove/remark-github-blockquote-alert/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/remark-github-blockquote-alert/CONTRIBUTORS.svg" />
 </a>
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
