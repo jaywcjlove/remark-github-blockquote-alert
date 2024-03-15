@@ -27,6 +27,7 @@ jobs:
           cat > idoc.yml << EOF
           site: "remark-github-blockquote-alert {{version}}"
           openSource: https://github.com/jaywcjlove/remark-github-blockquote-alert
+          tocs: false
           menus:
             Attr: https://jaywcjlove.github.io/rehype-attr/
             Ignore: index.html
