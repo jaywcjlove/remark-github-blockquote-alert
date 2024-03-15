@@ -45,6 +45,28 @@ The output HTML will be:
 </div>
 ```
 
+To add an alert, use a special blockquote line specifying the alert type, followed by the alert information in a standard blockquote. Five types of alerts are available:
+
+```markdown
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+Here are the rendered alerts:
+
+![](https://docs.github.com/assets/cb-50447/mw-1440/images/help/writing/alerts-rendered.webp)
 
 ## Related
 
