@@ -28,6 +28,8 @@ jobs:
           site: "remark-github-blockquote-alert {{version}}"
           openSource: https://github.com/jaywcjlove/remark-github-blockquote-alert
           tocs: false
+          element: 
+            wrapper: style=max-width: 860px;
           menus:
             Attr: https://jaywcjlove.github.io/rehype-attr/
             Ignore: index.html
