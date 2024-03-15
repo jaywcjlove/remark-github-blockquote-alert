@@ -1,1 +1,1 @@
-https://jaywcjlove.github.io/remark-github-alert/index.html
+https://jaywcjlove.github.io/remark-github-blockquote-alert/index.html
