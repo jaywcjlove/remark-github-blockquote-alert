@@ -11,6 +11,8 @@ remark-github-blockquote-alert
 
 Remark plugin to add support for [GitHub Alert](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
 
+![](https://docs.github.com/assets/cb-50447/mw-1440/images/help/writing/alerts-rendered.webp)
+
 Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information.
 
 ## Installation
