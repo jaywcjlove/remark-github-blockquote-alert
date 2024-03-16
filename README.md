@@ -189,6 +189,21 @@ Here are the rendered alerts:
 
 ![](https://docs.github.com/assets/cb-50447/mw-1440/images/help/writing/alerts-rendered.webp)
 
+> [!NOTE]  
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]  
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]  
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]  
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]  
+> Advises about risks or negative outcomes of certain actions.
+
 ## Related
 
 - [`rehype-rewrite`](https://github.com/jaywcjlove/rehype-rewrite) Rewrite element with rehype.
