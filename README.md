@@ -26,12 +26,7 @@ npm install remark-github-blockquote-alert
 ```js
 import { remarkAlert } from 'remark-github-blockquote-alert'
 
-let markdown = `\
-# Alert
-> [!NOTE]
-> test
-`;
-
+let markdown = `# Alert \n> [!NOTE] \n> test`;
 const htmlStr = remark()
     .use(remarkParse)
     .use(remarkAlert)
