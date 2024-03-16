@@ -45,6 +45,31 @@ The output HTML will be:
 </div>
 ```
 
+## Modify the title
+
+Change the expression `[!NOTE]` to `[!NOTE/笔记]`
+
+```js
+let markdown = `# Alert \n> [!NOTE/笔记] \n> test`;
+
+const htmlStr = remark()
+    .use(remarkParse)
+    .use(remarkAlert, { legacyTitle: true })
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .processSync(markdown).toString()
+```
+
+The output HTML will be:
+
+```html
+<h1>笔记</h1>
+<div class="markdown-alert markdown-alert-note" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>NOTE</p>
+<p>Useful information that users should know, even when skimming content.</p>
+</div>
+```
+
 ## Styling
 
 Add the following styles to your css to mimic GitHub's styling of alerts:

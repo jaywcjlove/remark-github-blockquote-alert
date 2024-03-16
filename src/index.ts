@@ -2,30 +2,43 @@ import { visit } from 'unist-util-visit';
 import type { Plugin } from 'unified';
 import type { Root, PhrasingContent } from "mdast";
 
-const alertRegex = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)]/i;
+const alertRegex = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i;
+const alertLegacyRegex = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)(\/.*)?\]/i;
+
+type Option = {
+  /**
+   * Use the legacy title format, which includes a slash and a title after the alert type.
+   * 
+   * Enabling legacyTitle allows modifying the title, but this is not GitHub standard.
+   */
+  legacyTitle?: boolean
+}
 
 /**
  * Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information.
  * On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.
  * https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
  */
-export const remarkAlert: Plugin<[], Root> = () => {
+export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false } = {}) => {
   return (tree) => {
     visit(tree, "blockquote", (node, index, parent) => {
-      let alertNode = '';
+      let alertType = '';
+      let title = '';
       let isNext = true;
       let child = node.children.map((item) => {
         if (isNext && item.type === "paragraph") {
           const firstNode = item.children[0];
           const text = firstNode.type === 'text' ? firstNode.value : '';
-          const match = text.match(alertRegex);
+          const reg = legacyTitle ? alertLegacyRegex : alertRegex;
+          const match = text.match(reg);
           if (match) {
             isNext = false;
-            alertNode = match[1].toLocaleLowerCase();
+            alertType = match[1].toLocaleLowerCase();
+            title = legacyTitle ? match[2] || alertType.toLocaleUpperCase() : alertType.toLocaleUpperCase();
             if (text.includes('\n')) {
               item.children[0] = {
                 type: 'text',
-                value: text.replace(alertRegex, '').replace(/^\n+/, ''),
+                value: text.replace(reg, '').replace(/^\n+/, ''),
               };
             }
 
@@ -45,21 +58,21 @@ export const remarkAlert: Plugin<[], Root> = () => {
         return item;
       })
 
-      if (!!alertNode) {
+      if (!!alertType) {
         node.data = {
           hName: "div",
           hProperties: {
-            class: `markdown-alert markdown-alert-${alertNode}`,
+            class: `markdown-alert markdown-alert-${alertType}`,
             dir: 'auto'
           },
         }
         child.unshift({
           type: "paragraph",
           children: [
-            getAlertIcon(alertNode as IconType),
+            getAlertIcon(alertType as IconType),
             {
               type: "text",
-              value: alertNode.toLocaleUpperCase()
+              value: title.replace(/^\//, ''),
             }
           ],
           data: {
