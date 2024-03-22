@@ -74,7 +74,13 @@ The output HTML will be:
 
 ## Styling
 
-Add the following styles to your css to mimic GitHub's styling of alerts:
+You can mimic GitHub's alert style by adding the styles provided in the npm package to your CSS.
+
+```js
+import 'remark-github-blockquote-alert/alert.css'
+```
+
+Or, add the following styles to your CSS to mimic GitHub's alert style:
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -127,7 +133,8 @@ Add the following styles to your css to mimic GitHub's styling of alerts:
 }
 .markdown-alert .markdown-alert-title svg.octicon {
   margin-right: 8px!important;
-  margin-right: var(--base-size-8,8px)!important
+  margin-right: var(--base-size-8,8px) !important;
+  fill: currentColor;
 }
 .markdown-alert.markdown-alert-note {
   border-left-color: var(--borderColor-accent-emphasis,var(--color-accent-emphasis))
