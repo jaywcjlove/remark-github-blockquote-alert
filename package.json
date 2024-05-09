@@ -9,7 +9,10 @@
   "sideEffects": false,
   "type": "module",
   "typings": "./lib/index.d.ts",
-  "exports": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./alert.css": "./alert.css"
+  },
   "scripts": {
     "prepack": "npm run build",
     "start": "node lib/index.js",
