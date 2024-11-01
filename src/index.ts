@@ -11,7 +11,12 @@ type Option = {
    * 
    * Enabling legacyTitle allows modifying the title, but this is not GitHub standard.
    */
-  legacyTitle?: boolean
+  legacyTitle?: boolean;
+  /**
+   * The tag name of the alert container. default is `div`.
+   * or you can use `blockquote` for semantic HTML.
+   */
+  tagName?: string;
 }
 
 /**
@@ -19,7 +24,7 @@ type Option = {
  * On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.
  * https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
  */
-export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false } = {}) => {
+export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagName = "div" } = {}) => {
   return (tree) => {
     visit(tree, "blockquote", (node, index, parent) => {
       let alertType = '';
@@ -60,7 +65,7 @@ export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false } = {
 
       if (!!alertType) {
         node.data = {
-          hName: "div",
+          hName: tagName,
           hProperties: {
             class: `markdown-alert markdown-alert-${alertType}`,
             dir: 'auto'
