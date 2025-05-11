@@ -93,6 +93,8 @@ export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagN
   };
 };
 
+export default remarkAlert;
+
 export function getAlertIcon(type: IconType): PhrasingContent {
   let pathD = pathData[type] ?? '';
   return {
