@@ -1,6 +1,6 @@
-import type { PhrasingContent, Root } from "mdast";
-import type { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
+import type { Plugin } from 'unified';
+import type { Root, PhrasingContent } from "mdast";
 
 const alertRegex = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i;
 const alertLegacyRegex = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)(\/.*)?\]/i;
