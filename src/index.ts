@@ -8,7 +8,7 @@ const alertLegacyRegex = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)(\/.*)?\]/i;
 type Option = {
   /**
    * Use the legacy title format, which includes a slash and a title after the alert type.
-   * 
+   *
    * Enabling legacyTitle allows modifying the title, but this is not GitHub standard.
    */
   legacyTitle?: boolean;
@@ -67,7 +67,7 @@ export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagN
         node.data = {
           hName: tagName,
           hProperties: {
-            class: `markdown-alert markdown-alert-${alertType}`,
+            className: ["markdown-alert", `markdown-alert-${alertType}`],
             dir: 'auto'
           },
         }
@@ -82,7 +82,7 @@ export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagN
           ],
           data: {
             hProperties: {
-              class: "markdown-alert-title",
+              className: "markdown-alert-title",
               dir: "auto"
             }
           }
@@ -102,7 +102,7 @@ export function getAlertIcon(type: IconType): PhrasingContent {
     data: {
       hName: "svg",
       hProperties: {
-        class: "octicon",
+        className: ["octicon"],
         viewBox: '0 0 16 16',
         width: '16',
         height: '16',
