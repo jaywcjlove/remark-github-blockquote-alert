@@ -40,7 +40,8 @@ remark-github-blockquote-alert
 ===
 <!--rehype:style=display: flex; height: 230px; align-items: center; justify-content: center; font-size: 38px;-->
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor) 
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://jaywcjlove.github.io/#/sponsor)
+[![Follow On X](https://img.shields.io/badge/Follow%20on%20X-333333?logo=x&logoColor=white)](https://x.com/jaywcjlove)
 [![Downloads](https://img.shields.io/npm/dm/remark-github-blockquote-alert.svg?style=flat)](https://www.npmjs.com/package/remark-github-blockquote-alert)
 [![NPM version](https://img.shields.io/npm/v/remark-github-blockquote-alert.svg?style=flat)](https://npmjs.org/package/remark-github-blockquote-alert)
 [![CI](https://github.com/jaywcjlove/remark-github-blockquote-alert/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/remark-github-blockquote-alert/actions/workflows/ci.yml)
