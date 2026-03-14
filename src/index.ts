@@ -17,6 +17,10 @@ type Option = {
    * or you can use `blockquote` for semantic HTML.
    */
   tagName?: string;
+  /**
+   * Custom class names for the alert container appending to the end.
+   */
+  classNames?: string;
 }
 
 /**
@@ -24,7 +28,7 @@ type Option = {
  * On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.
  * https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
  */
-export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagName = "div" } = {}) => {
+export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagName = "div", classNames = "" } = {}) => {
   return (tree) => {
     visit(tree, "blockquote", (node, index, parent) => {
       let alertType = '';
@@ -67,7 +71,7 @@ export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagN
         node.data = {
           hName: tagName,
           hProperties: {
-            className: ["markdown-alert", `markdown-alert-${alertType}`],
+            className: ["markdown-alert", `markdown-alert-${alertType}`, ...classNames.split(" ").filter((s) => s.length)],
             dir: 'auto'
           },
         }
