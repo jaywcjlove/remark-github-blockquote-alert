@@ -44,23 +44,30 @@ export const remarkAlert: Plugin<[Option?], Root> = ({ legacyTitle = false, tagN
             isNext = false;
             alertType = match[1].toLocaleLowerCase();
             title = legacyTitle ? match[2] || alertType.toLocaleUpperCase() : alertType.toLocaleUpperCase();
-            if (text.includes('\n')) {
-              item.children[0] = {
-                type: 'text',
-                value: text.replace(reg, '').replace(/^\n+/, ''),
-              };
+            // Text after the marker is body content. Remove only the marker,
+            // its separating spaces, and a hard break on a marker-only line.
+            let value = text.slice(match[0].length);
+            if (/^[ \t]*\n/.test(value)) {
+              value = value.replace(/^[ \t]*\n+/, '');
+            } else {
+              value = value.replace(/^[ \t]+/, '');
             }
 
-            if (!text.includes('\n')) {
+            if (!value) {
               const itemChild: Array<PhrasingContent> = [];
-              item.children.forEach((item, idx) => {
+              item.children.forEach((child, idx) => {
                 if (idx == 0) return;
-                if (idx == 1 && item.type === 'break') {
+                if (idx == 1 && child.type === 'break') {
                   return;
                 }
-                itemChild.push(item);
+                itemChild.push(child);
               });
               item.children = [...itemChild];
+            } else {
+              item.children[0] = {
+                type: 'text',
+                value,
+              };
             }
           }
         }
