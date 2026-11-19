@@ -14,8 +14,9 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
+    "types": ["node"],
     "outDir": "lib",
-    "baseUrl": "."
+    "rootDir": "src"
   },
   "include": [
     "src/**/*"
